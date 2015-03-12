@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9 bg-info round-corner">
+      <ul id="chat">
+        <%= render @messages %>
+      </ul>
+
+
+    </div>
+    <div class="col-xs-6 col-md-2 col-sm-offset-1 bg-info round-corner">
+      Active Users
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-9 bg-warning">
+        <%= simple_form_for(Message.new, remote: true , html: {class: 'form-horizontal entry-form' }) do |f| %>
+            <%= f.text_field :content ,required: true , as: :text,  placeholder: 'Enter message' %>
+            <%= f.submit "Send" ,class: "btn btn-success"%>
+        <% end %>
+      <%= subscribe_to "/messages/new" %>
+    </div>
+
+  </div>
+  </div>
+
+

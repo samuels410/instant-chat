@@ -1,0 +1,22 @@
+<div class="jumbotron">
+  <h3>Click the image to Select your character and start chat!</h3>
+  <% unless current_user %>
+      <div class="row">
+        <% @dialect.each do |dialect| %>
+            <div class="col-xs-6 col-sm-2">
+              <img src="/images/<%= dialect.dialect%>.jpg" alt="<%= dialect.dialect %>" class="dialect-img thumpnail"
+                   data-id=<%=dialect.id %> />
+              <br/>
+              <%= dialect.dialect%>
+            </div>
+        <% end  %>
+      </div>
+      <%= simple_form_for(User.new , html: {class: 'form-horizontal entry-form' }) do |f| %>
+          <%= f.input :username ,required: true%>
+          <%= f.hidden_field :guest, value: true %>
+          <%= f.hidden_field :dialect_id%>
+          <br/>
+          <%= f.submit "Join Chat" ,class: "btn btn-primary btn-lg"%>
+      <% end %>
+  <% end %>
+</div>

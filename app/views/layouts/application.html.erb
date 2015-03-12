@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Awesome Chat Application</title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
+  <div class="container">
+    <%= render "layouts/header" %>
+    <% if content_for? :sidebar %>
+      <aside class="sidebar">
+        <%= yield :sidebar %>
+      </aside>
+  <% end %>
+
+    <%= render "layouts/messages" %>
+    <div class=" adjust-top">
+    <%= yield %>
+    </div>
+  <%= yield :end %>
+  </div>
+  </body>
+</html>

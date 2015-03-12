@@ -1,0 +1,15 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="<%= root_path %>">Awesome Chat</a></li>
+    </ul>
+      <%= yield :header %>
+      <% if current_user %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"> Logged in as <strong><%= current_user.username %></strong>.</a>  </li>
+          <li><%= link_to "Log Out", logout_path %> </li>
+         </ul>
+    <% end %>
+
+  </div>
+</nav>

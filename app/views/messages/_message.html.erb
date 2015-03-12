@@ -1,0 +1,19 @@
+
+<div class="activity">
+  <time class="posted_at" ><%= time_ago_in_words(message.created_at) %> ago</time>
+  <img src="/images/<%= message.user.dialect.dialect%>.jpg" alt="<%= message.user.dialect.dialect %>"
+       class="avatar" data-id=<%=message.user.dialect.id %> />
+
+  <div class="readable">
+  <span class="user">
+  <%= message.user.username %>
+  </span>
+
+  <span class="content">
+    <%= message.content %>
+  </span>
+
+  </div>
+
+
+</div>
