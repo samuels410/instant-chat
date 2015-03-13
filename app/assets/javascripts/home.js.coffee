@@ -15,3 +15,7 @@ $ ->
     selected_dialect = $('.selected').data('id')
     $('#user_dialect_id').val selected_dialect
     return
+
+  $("#new_message").submit (event) ->
+    target = document.getElementById('chat');
+    window.spinner = new Spinner().spin(target);
