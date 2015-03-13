@@ -10,7 +10,13 @@
   </span>
 
   <span class="content">
-    <%= message.content %>
+
+    <% if message.translated_message  %>
+        <%= message.translated_message  %>
+    <% else  %>
+        <%= message.content %>
+    <% end  %>
+
   </span>
 
   </div>

@@ -21,3 +21,12 @@ start rails server
 
 
 Requires Ruby 1.9.2 or later to run.
+
+
+Running Tests:
+
+  ```
+   RAILS_ENV=test bundle exec rake db:migrate
+   bundle exec rspec
+
+  ```

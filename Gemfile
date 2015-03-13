@@ -13,6 +13,15 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'pry'
+  gem 'quiet_assets'
+  gem 'faker'
+  gem 'capybara'
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
@@ -22,3 +31,4 @@ gem 'thin'
 gem 'private_pub','1.0.0'
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'nokogiri'
