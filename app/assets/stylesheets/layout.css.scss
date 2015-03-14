@@ -14,7 +14,7 @@
 }
 
 .dialect-small{
-  height: 50px;
+  height: 30px;
 }
 
 .selected{
@@ -28,4 +28,13 @@
 
 .new_message{
   text-align: center;
+}
+
+
+.active_users{
+  background: white;
+}
+
+.publish-form{
+  display: none;
 }

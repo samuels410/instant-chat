@@ -28,7 +28,7 @@ gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'thin'
-gem 'private_pub','1.0.0'
+gem 'private_pub'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'nokogiri'

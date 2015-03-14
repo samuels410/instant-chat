@@ -1,0 +1,8 @@
+<% publish_to "/app/publish_users" do %>
+  <% if @preferred_action == "connected" %>
+      $('#user_<%= current_user.id %>').remove();
+      $('.active_users').append("<%= j render(current_user) %>");
+  <% else  %>
+      $('#user_<%= current_user.id %>').remove();
+  <% end %>
+<% end %>

@@ -14,6 +14,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    PrivatePub.publish_to("/meta/disconnect", session_id: session[:user_id])
+    ActiveUser.find_by_user_id(session[:user_id]).destroy
     session[:user_id] = nil
     redirect_to root_url, notice: "Logged out!"
   end
