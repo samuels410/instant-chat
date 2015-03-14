@@ -6,8 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-['Pirate', 'Yoda', 'Valley Girl'].each do |dialect |
-  Dialect.create!(dialect: dialect  )
+urls = ['http://isithackday.com/arrpi.php','http://www.degraeve.com/cgi-bin/babel.cgi','http://www.degraeve.com/cgi-bin/babel.cgi']
+dialects_list = ['Pirate', 'Yoda', 'Valley Girl']
+dialects = dialects_list.zip( urls )
+dialects.each do |dialect ,url|
+  Dialect.create!(dialect: dialect ,translation_url: url )
 end
 
 puts "Default dialects created!"
